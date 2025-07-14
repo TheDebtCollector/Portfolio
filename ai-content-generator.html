@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Content Generator - Smart Writing Assistant</title>
+  <link rel="stylesheet" href="ai-content-generator.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-robot"></i>
+          <span>AI Content Pro</span>
+        </div>
+        <nav class="nav">
+          <a href="#generator" class="nav-link active">Generator</a>
+          <a href="#templates" class="nav-link">Templates</a>
+          <a href="#history" class="nav-link">History</a>
+          <a href="#settings" class="nav-link">Settings</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="btn btn-primary" id="upgradeBtn">
+            <i class="fas fa-crown"></i>
+            Upgrade
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <!-- Generator Section -->
+      <section class="generator-section" id="generator">
+        <div class="section-header">
+          <h1>AI Content Generator</h1>
+          <p>Create engaging content in seconds with AI-powered writing assistance</p>
+        </div>
+
+        <div class="generator-grid">
+          <!-- Content Type Selection -->
+          <div class="content-type-card">
+            <h3>Choose Content Type</h3>
+            <div class="content-types">
+              <div class="content-type active" data-type="blog">
+                <i class="fas fa-blog"></i>
+                <span>Blog Post</span>
+              </div>
+              <div class="content-type" data-type="social">
+                <i class="fas fa-share-alt"></i>
+                <span>Social Media</span>
+              </div>
+              <div class="content-type" data-type="email">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </div>
+              <div class="content-type" data-type="product">
+                <i class="fas fa-tag"></i>
+                <span>Product Description</span>
+              </div>
+              <div class="content-type" data-type="seo">
+                <i class="fas fa-search"></i>
+                <span>SEO Content</span>
+              </div>
+              <div class="content-type" data-type="custom">
+                <i class="fas fa-edit"></i>
+                <span>Custom</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Form -->
+          <div class="input-form-card">
+            <h3>Content Details</h3>
+            <form id="contentForm">
+              <div class="form-group">
+                <label for="topic">Topic/Subject *</label>
+                <input type="text" id="topic" placeholder="Enter your topic or subject" required>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tone">Tone</label>
+                  <select id="tone">
+                    <option value="professional">Professional</option>
+                    <option value="casual">Casual</option>
+                    <option value="friendly">Friendly</option>
+                    <option value="formal">Formal</option>
+                    <option value="creative">Creative</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="length">Length</label>
+                  <select id="length">
+                    <option value="short">Short (150-300 words)</option>
+                    <option value="medium" selected>Medium (300-600 words)</option>
+                    <option value="long">Long (600-1000 words)</option>
+                    <option value="very-long">Very Long (1000+ words)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="keywords">Keywords (optional)</label>
+                <input type="text" id="keywords" placeholder="Enter keywords separated by commas">
+              </div>
+
+              <div class="form-group">
+                <label for="additionalInfo">Additional Information</label>
+                <textarea id="additionalInfo" rows="3" placeholder="Any specific requirements, target audience, or context..."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="clearBtn">
+                  <i class="fas fa-eraser"></i>
+                  Clear
+                </button>
+                <button type="submit" class="btn btn-primary" id="generateBtn">
+                  <i class="fas fa-magic"></i>
+                  Generate Content
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Generated Content -->
+          <div class="output-card">
+            <div class="output-header">
+              <h3>Generated Content</h3>
+              <div class="output-actions">
+                <button class="action-btn" id="copyBtn" title="Copy to clipboard">
+                  <i class="fas fa-copy"></i>
+                </button>
+                <button class="action-btn" id="downloadBtn" title="Download as file">
+                  <i class="fas fa-download"></i>
+                </button>
+                <button class="action-btn" id="regenerateBtn" title="Regenerate">
+                  <i class="fas fa-redo"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="output-content" id="outputContent">
+              <div class="placeholder-content">
+                <i class="fas fa-robot"></i>
+                <h4>Ready to Generate</h4>
+                <p>Fill in the form and click "Generate Content" to create your AI-powered content.</p>
+              </div>
+            </div>
+
+            <div class="content-stats" id="contentStats" style="display: none;">
+              <div class="stat">
+                <span class="stat-number" id="wordCount">0</span>
+                <span class="stat-label">Words</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" id="charCount">0</span>
+                <span class="stat-label">Characters</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" id="readTime">0</span>
+                <span class="stat-label">Min Read</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Templates Section -->
+      <section class="templates-section" id="templates">
+        <div class="section-header">
+          <h2>Content Templates</h2>
+          <p>Pre-built templates for common content types</p>
+        </div>
+
+        <div class="templates-grid">
+          <div class="template-card">
+            <div class="template-icon">
+              <i class="fas fa-blog"></i>
+            </div>
+            <h4>Blog Post</h4>
+            <p>Comprehensive blog articles with introduction, body, and conclusion</p>
+            <button class="btn btn-outline" data-template="blog">Use Template</button>
+          </div>
+
+          <div class="template-card">
+            <div class="template-icon">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <h4>Social Media Post</h4>
+            <p>Engaging social media content for various platforms</p>
+            <button class="btn btn-outline" data-template="social">Use Template</button>
+          </div>
+
+          <div class="template-card">
+            <div class="template-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h4>Email Newsletter</h4>
+            <p>Professional email newsletters with compelling subject lines</p>
+            <button class="btn btn-outline" data-template="email">Use Template</button>
+          </div>
+
+          <div class="template-card">
+            <div class="template-icon">
+              <i class="fas fa-tag"></i>
+            </div>
+            <h4>Product Description</h4>
+            <p>Persuasive product descriptions that drive sales</p>
+            <button class="btn btn-outline" data-template="product">Use Template</button>
+          </div>
+
+          <div class="template-card">
+            <div class="template-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h4>SEO Article</h4>
+            <p>SEO-optimized content with meta descriptions and keywords</p>
+            <button class="btn btn-outline" data-template="seo">Use Template</button>
+          </div>
+
+          <div class="template-card">
+            <div class="template-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Creative Writing</h4>
+            <p>Creative and engaging content for storytelling</p>
+            <button class="btn btn-outline" data-template="creative">Use Template</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section class="history-section" id="history">
+        <div class="section-header">
+          <h2>Generation History</h2>
+          <p>Your previously generated content</p>
+        </div>
+
+        <div class="history-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="blog">Blog Posts</button>
+          <button class="filter-btn" data-filter="social">Social Media</button>
+          <button class="filter-btn" data-filter="email">Emails</button>
+          <button class="filter-btn" data-filter="product">Products</button>
+        </div>
+
+        <div class="history-list" id="historyList">
+          <!-- History items will be dynamically loaded -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h3>Generating Content...</h3>
+      <p>AI is crafting your perfect content</p>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="ai-content-generator.js"></script>
+</body>
+</html> 
