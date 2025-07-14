@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore - Premium Electronics & Gadgets</title>
+  <link rel="stylesheet" href="ecommerce-store.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-laptop"></i>
+          <span>TechStore</span>
+        </div>
+        
+        <nav class="nav">
+          <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#products" class="nav-link">Products</a></li>
+            <li><a href="#categories" class="nav-link">Categories</a></li>
+            <li><a href="#deals" class="nav-link">Deals</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <div class="search-bar">
+            <input type="text" placeholder="Search products..." id="searchInput">
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          
+          <div class="user-actions">
+            <button class="action-btn" id="wishlistBtn">
+              <i class="fas fa-heart"></i>
+              <span class="badge" id="wishlistCount">0</span>
+            </button>
+            <button class="action-btn" id="cartBtn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge" id="cartCount">0</span>
+            </button>
+            <button class="action-btn" id="userBtn">
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-slider">
+      <div class="slide active">
+        <div class="slide-content">
+          <div class="slide-text">
+            <h1>Latest Tech Gadgets</h1>
+            <p>Discover the newest smartphones, laptops, and smart devices at unbeatable prices.</p>
+            <a href="#products" class="btn btn-primary">Shop Now</a>
+          </div>
+          <div class="slide-image">
+            <div class="product-showcase">
+              <div class="product-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Smartphones</span>
+              </div>
+              <div class="product-item">
+                <i class="fas fa-laptop"></i>
+                <span>Laptops</span>
+              </div>
+              <div class="product-item">
+                <i class="fas fa-headphones"></i>
+                <span>Audio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-features">
+      <div class="feature">
+        <i class="fas fa-shipping-fast"></i>
+        <div>
+          <h4>Free Shipping</h4>
+          <p>On orders over $50</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <div>
+          <h4>Secure Payment</h4>
+          <p>100% secure checkout</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-undo"></i>
+        <div>
+          <h4>Easy Returns</h4>
+          <p>30-day return policy</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <div>
+          <h4>24/7 Support</h4>
+          <p>Get help anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Find exactly what you're looking for in our organized categories</p>
+      </div>
+      
+      <div class="categories-grid">
+        <div class="category-card" data-category="smartphones">
+          <div class="category-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Smartphones</h3>
+          <p>Latest models from top brands</p>
+          <span class="product-count">24 products</span>
+        </div>
+        
+        <div class="category-card" data-category="laptops">
+          <div class="category-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3>Laptops</h3>
+          <p>Powerful machines for work & play</p>
+          <span class="product-count">18 products</span>
+        </div>
+        
+        <div class="category-card" data-category="tablets">
+          <div class="category-icon">
+            <i class="fas fa-tablet-alt"></i>
+          </div>
+          <h3>Tablets</h3>
+          <p>Portable computing solutions</p>
+          <span class="product-count">12 products</span>
+        </div>
+        
+        <div class="category-card" data-category="audio">
+          <div class="category-icon">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <h3>Audio</h3>
+          <p>Premium sound experience</p>
+          <span class="product-count">32 products</span>
+        </div>
+        
+        <div class="category-card" data-category="accessories">
+          <div class="category-icon">
+            <i class="fas fa-keyboard"></i>
+          </div>
+          <h3>Accessories</h3>
+          <p>Essential add-ons & peripherals</p>
+          <span class="product-count">45 products</span>
+        </div>
+        
+        <div class="category-card" data-category="smart-home">
+          <div class="category-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Smart Home</h3>
+          <p>Automate your living space</p>
+          <span class="product-count">28 products</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="products-header">
+        <div class="section-header">
+          <h2>Featured Products</h2>
+          <p>Handpicked products for the best shopping experience</p>
+        </div>
+        
+        <div class="products-filters">
+          <div class="filter-group">
+            <label>Sort by:</label>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest First</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+          
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">
+              <i class="fas fa-th"></i>
+            </button>
+            <button class="view-btn" data-view="list">
+              <i class="fas fa-list"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be dynamically loaded here -->
+      </div>
+      
+      <div class="load-more">
+        <button class="btn btn-secondary" id="loadMoreBtn">
+          <span>Load More Products</span>
+          <i class="fas fa-arrow-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals Section -->
+  <section class="deals" id="deals">
+    <div class="container">
+      <div class="section-header">
+        <h2>Special Deals</h2>
+        <p>Limited time offers you don't want to miss</p>
+      </div>
+      
+      <div class="deals-grid">
+        <div class="deal-card">
+          <div class="deal-badge">50% OFF</div>
+          <div class="deal-image">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="deal-content">
+            <h3>iPhone 13 Pro</h3>
+            <div class="price-group">
+              <span class="original-price">$999</span>
+              <span class="deal-price">$499</span>
+            </div>
+            <p>Limited time offer on the latest iPhone</p>
+            <div class="countdown" data-end="2024-12-31">
+              <span class="time-unit">
+                <span class="number">02</span>
+                <span class="label">Days</span>
+              </span>
+              <span class="time-unit">
+                <span class="number">18</span>
+                <span class="label">Hours</span>
+              </span>
+              <span class="time-unit">
+                <span class="number">45</span>
+                <span class="label">Minutes</span>
+              </span>
+            </div>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="deal-card">
+          <div class="deal-badge">30% OFF</div>
+          <div class="deal-image">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <div class="deal-content">
+            <h3>MacBook Air M2</h3>
+            <div class="price-group">
+              <span class="original-price">$1,199</span>
+              <span class="deal-price">$839</span>
+            </div>
+            <p>Powerful performance in a sleek design</p>
+            <div class="countdown" data-end="2024-12-25">
+              <span class="time-unit">
+                <span class="number">05</span>
+                <span class="label">Days</span>
+              </span>
+              <span class="time-unit">
+                <span class="number">12</span>
+                <span class="label">Hours</span>
+              </span>
+              <span class="time-unit">
+                <span class="number">30</span>
+                <span class="label">Minutes</span>
+              </span>
+            </div>
+            <button class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button class="close-btn" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be dynamically loaded here -->
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-amount" id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">
+        <span>Proceed to Checkout</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Wishlist Sidebar -->
+  <div class="wishlist-sidebar" id="wishlistSidebar">
+    <div class="wishlist-header">
+      <h3>Wishlist</h3>
+      <button class="close-btn" id="closeWishlist">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="wishlist-items" id="wishlistItems">
+      <!-- Wishlist items will be dynamically loaded here -->
+    </div>
+  </div>
+
+  <!-- User Menu -->
+  <div class="user-menu" id="userMenu">
+    <div class="user-menu-header">
+      <div class="user-info">
+        <div class="user-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <h4>Welcome Guest</h4>
+          <p>Sign in to your account</p>
+        </div>
+      </div>
+      <button class="close-btn" id="closeUserMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="user-menu-content">
+      <button class="menu-item" id="signInBtn">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Sign In</span>
+      </button>
+      <button class="menu-item" id="signUpBtn">
+        <i class="fas fa-user-plus"></i>
+        <span>Create Account</span>
+      </button>
+      <div class="menu-divider"></div>
+      <button class="menu-item">
+        <i class="fas fa-heart"></i>
+        <span>My Wishlist</span>
+      </button>
+      <button class="menu-item">
+        <i class="fas fa-shopping-bag"></i>
+        <span>Order History</span>
+      </button>
+      <button class="menu-item">
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Product Modal -->
+  <div class="product-modal" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="product-details" id="productDetails">
+        <!-- Product details will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal" id="checkoutModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCheckout">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="checkout-content">
+        <div class="checkout-header">
+          <h2>Checkout</h2>
+          <p>Complete your purchase</p>
+        </div>
+        
+        <div class="checkout-steps">
+          <div class="step active" data-step="1">
+            <span class="step-number">1</span>
+            <span class="step-label">Shipping</span>
+          </div>
+          <div class="step" data-step="2">
+            <span class="step-number">2</span>
+            <span class="step-label">Payment</span>
+          </div>
+          <div class="step" data-step="3">
+            <span class="step-number">3</span>
+            <span class="step-label">Review</span>
+          </div>
+        </div>
+        
+        <div class="checkout-form" id="checkoutForm">
+          <!-- Checkout form will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-brand">
+            <i class="fas fa-laptop"></i>
+            <span>TechStore</span>
+          </div>
+          <p>Your one-stop destination for premium electronics and tech gadgets. Quality products, competitive prices, and exceptional service.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#deals">Deals</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Rewards</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get special offers and updates</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2024 TechStore. All rights reserved. | Built with ❤️ by Noah</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="ecommerce-store.js"></script>
+</body>
+</html> 

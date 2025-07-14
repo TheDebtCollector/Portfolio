@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Portfolio Tracker - Noah's Projects</title>
+  <link rel="stylesheet" href="crypto-dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h2>Loading Crypto Dashboard</h2>
+      <p>Fetching real-time market data...</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-chart-line"></i>
+        <span>CryptoTracker</span>
+      </div>
+      <div class="nav-controls">
+        <button class="refresh-btn" id="refreshBtn">
+          <i class="fas fa-sync-alt"></i>
+          Refresh
+        </button>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard">
+    <!-- Header Stats -->
+    <header class="dashboard-header">
+      <div class="header-stats">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Portfolio Value</h3>
+            <p class="stat-value" id="totalValue">$0.00</p>
+            <span class="stat-change positive" id="totalChange">+0.00%</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-chart-area"></i>
+          </div>
+          <div class="stat-content">
+            <h3>24h Change</h3>
+            <p class="stat-value" id="dailyChange">$0.00</p>
+            <span class="stat-change" id="dailyChangePercent">+0.00%</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-coins"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Total Coins</h3>
+            <p class="stat-value" id="totalCoins">0</p>
+            <span class="stat-change">Active</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-trending-up"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Best Performer</h3>
+            <p class="stat-value" id="bestPerformer">-</p>
+            <span class="stat-change positive" id="bestPerformerChange">+0.00%</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+      <!-- Portfolio Overview -->
+      <section class="portfolio-section">
+        <div class="section-header">
+          <h2>Portfolio Overview</h2>
+          <div class="section-controls">
+            <button class="btn btn-primary" id="addCoinBtn">
+              <i class="fas fa-plus"></i>
+              Add Coin
+            </button>
+            <select class="time-filter" id="timeFilter">
+              <option value="24h">24H</option>
+              <option value="7d">7D</option>
+              <option value="30d">30D</option>
+              <option value="1y">1Y</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Portfolio Chart -->
+        <div class="chart-container">
+          <canvas id="portfolioChart"></canvas>
+        </div>
+
+        <!-- Portfolio Table -->
+        <div class="portfolio-table-container">
+          <div class="table-header">
+            <h3>Your Holdings</h3>
+            <div class="table-controls">
+              <input type="text" placeholder="Search coins..." class="search-input" id="searchInput">
+              <select class="sort-select" id="sortSelect">
+                <option value="value">Sort by Value</option>
+                <option value="change">Sort by Change</option>
+                <option value="name">Sort by Name</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="portfolio-table" id="portfolioTable">
+              <thead>
+                <tr>
+                  <th>Coin</th>
+                  <th>Price</th>
+                  <th>24h Change</th>
+                  <th>Holdings</th>
+                  <th>Value</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="portfolioTableBody">
+                <!-- Portfolio data will be populated here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Overview -->
+      <section class="market-section">
+        <div class="section-header">
+          <h2>Market Overview</h2>
+          <div class="market-tabs">
+            <button class="tab-btn active" data-tab="trending">Trending</button>
+            <button class="tab-btn" data-tab="gainers">Top Gainers</button>
+            <button class="tab-btn" data-tab="losers">Top Losers</button>
+          </div>
+        </div>
+
+        <div class="market-grid" id="marketGrid">
+          <!-- Market data will be populated here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Add Coin Modal -->
+  <div class="modal" id="addCoinModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add New Coin</h3>
+        <button class="modal-close" id="closeModal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addCoinForm">
+          <div class="form-group">
+            <label for="coinSelect">Select Coin</label>
+            <select id="coinSelect" required>
+              <option value="">Choose a coin...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="coinAmount">Amount</label>
+            <input type="number" id="coinAmount" placeholder="0.00" step="0.000001" required>
+          </div>
+          <div class="form-group">
+            <label for="coinPrice">Purchase Price (USD)</label>
+            <input type="number" id="coinPrice" placeholder="0.00" step="0.01" required>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="cancelAdd">Cancel</button>
+            <button type="submit" class="btn btn-primary">Add to Portfolio</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Coin Modal -->
+  <div class="modal" id="editCoinModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Edit Holdings</h3>
+        <button class="modal-close" id="closeEditModal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editCoinForm">
+          <input type="hidden" id="editCoinId">
+          <div class="form-group">
+            <label for="editCoinAmount">Amount</label>
+            <input type="number" id="editCoinAmount" placeholder="0.00" step="0.000001" required>
+          </div>
+          <div class="form-group">
+            <label for="editCoinPrice">Purchase Price (USD)</label>
+            <input type="number" id="editCoinPrice" placeholder="0.00" step="0.01" required>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-danger" id="deleteCoin">Delete</button>
+            <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="crypto-dashboard.js"></script>
+</body>
+</html> 
