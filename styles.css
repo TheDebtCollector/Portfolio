@@ -228,7 +228,6 @@ body {
   margin-bottom: 1.5rem;
   line-height: 1.1;
   color: var(--text-primary);
-  animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
 .title-line {
@@ -240,6 +239,39 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  animation: highlightUnderline 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
+  will-change: width;
+}
+
+/* Single smooth sentence animation */
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlightUnderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .hero-description {
@@ -1284,3 +1316,210 @@ section {
 .mt-4 { margin-top: 1rem; }
 .mt-5 { margin-top: 1.25rem; }
 .mt-6 { margin-top: 1.5rem; } 
+
+/* --- DARK MODE --- */
+body.dark-mode {
+  --primary-color: #60a5fa;
+  --secondary-color: #1e293b;
+  --accent-color: #38bdf8;
+  --text-primary: #f3f4f6;
+  --text-secondary: #94a3b8;
+  --text-light: #cbd5e1;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-dark: #020617;
+  --bg-darker: #000;
+  --border-color: #334155;
+  --border-light: #1e293b;
+}
+body.dark-mode {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+body.dark-mode .navbar,
+body.dark-mode .footer {
+  background: rgba(15,23,42,0.98);
+  color: var(--text-primary);
+}
+body.dark-mode .section-header h2,
+body.dark-mode .section-header p {
+  color: var(--text-primary);
+}
+body.dark-mode .btn,
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+  background: var(--primary-color);
+  color: #fff;
+}
+body.dark-mode .btn-secondary {
+  background: var(--accent-color);
+}
+body.dark-mode .project-card,
+body.dark-mode .service-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .about-content,
+body.dark-mode .about-image,
+body.dark-mode .crypto-strategy,
+body.dark-mode .crypto-content,
+body.dark-mode .crypto-info,
+body.dark-mode .crypto-chart {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+body.dark-mode .project-card:hover,
+body.dark-mode .service-card:hover {
+  box-shadow: 0 0 32px 8px var(--primary-color);
+}
+body.dark-mode .mode-toggle {
+  background: var(--bg-dark);
+  color: var(--primary-color);
+}
+
+/* --- MODE TOGGLE BUTTON --- */
+.mode-toggle {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.mode-toggle:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* --- ABOUT LIST --- */
+.about-list {
+  list-style: none;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+.about-list li {
+  margin-bottom: 0.7rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.about-list li::before {
+  content: '\2022';
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 0.7rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+.resume-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* --- CRYPTO STRATEGY SECTION --- */
+.crypto-strategy {
+  background: var(--bg-secondary);
+  padding: 4rem 0 3rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.crypto-content {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.crypto-info {
+  flex: 2;
+  min-width: 220px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 2rem 2rem 2rem 2rem;
+  border: 1px solid var(--border-color);
+}
+.crypto-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.crypto-list {
+  list-style: none;
+  margin: 1.2rem 0 0 0;
+  padding: 0;
+}
+.crypto-list li {
+  margin-bottom: 0.7rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+.crypto-chart {
+  flex: 1.2;
+  min-width: 220px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+.crypto-chart canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 340px;
+  max-height: 220px;
+}
+
+/* --- MOBILE SPACING & RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .crypto-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .crypto-info, .crypto-chart {
+    padding: 1.2rem 0.7rem;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .crypto-strategy {
+    padding: 2rem 0 1.5rem 0;
+  }
+  .crypto-info, .crypto-chart {
+    padding: 0.7rem 0.3rem;
+  }
+  .about-list {
+    font-size: 1rem;
+  }
+  .resume-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.7rem 0;
+  }
+}
+/* --- END CUSTOM ADDITIONS --- */ 

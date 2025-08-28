@@ -1,0 +1,13 @@
+/* mirkoz-cart.css */
+.mkz-cart {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 #e5e7eb;
+  border: 2px solid #d90429;
+  color: #181818;
+}
+@media (max-width: 600px) {
+  .mkz-cart {
+    font-size: 0.97rem;
+  }
+} 

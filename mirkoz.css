@@ -1,0 +1,374 @@
+/* Rood-Zwart-Wit Thema */
+:root {
+  --mkz-bg: #fff;
+  --mkz-section-bg: #fff;
+  --mkz-primary: #d90429;
+  --mkz-accent: #d90429;
+  --mkz-dark: #181818;
+  --mkz-text: #181818;
+  --mkz-border: #e5e7eb;
+  --mkz-radius: 1.2rem;
+  --mkz-nav-bg: #181818;
+}
+body {
+  background: var(--mkz-bg);
+  color: var(--mkz-text);
+}
+/* Extra layout en opvulling voor hoofdsite */
+.mkz-nav {
+  background: var(--mkz-nav-bg);
+  color: #fff;
+  border-bottom: none;
+  padding: 1.5rem 3rem;
+  min-height: 70px;
+}
+.mkz-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--mkz-primary);
+  letter-spacing: 1px;
+}
+.mkz-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.mkz-nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0.2rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.2s;
+}
+.mkz-nav-links a:hover, .mkz-nav-links a.active {
+  color: var(--mkz-primary);
+  border-bottom: 2px solid var(--mkz-primary);
+}
+.mkz-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background: var(--mkz-section-bg);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mkz-hero-content {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 2.5rem 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+.mkz-hero h1 {
+  font-size: 2.2rem;
+  color: var(--mkz-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.mkz-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+.mkz-hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+/* Buttons */
+.mkz-btn {
+  display: inline-block;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  background: var(--mkz-primary);
+  color: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+.mkz-btn-secondary {
+  background: #fff;
+  color: var(--mkz-primary);
+  border: 2px solid var(--mkz-primary);
+}
+.mkz-btn:hover, .mkz-btn-secondary:hover {
+  background: #b3001b;
+  color: #fff;
+}
+.mkz-section {
+  padding: 2.5rem 1.2rem 1.5rem 1.2rem;
+  background: var(--mkz-section-bg);
+  border-radius: var(--mkz-radius);
+  margin: 2rem auto 0 auto;
+  max-width: 1000px;
+  border: 1px solid var(--mkz-border);
+}
+/* Section titles */
+.mkz-section h2 {
+  color: var(--mkz-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+.mkz-shop-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+/* Shop category cards */
+.mkz-shop-card {
+  background: #fff;
+  color: var(--mkz-primary);
+  border: 2px solid var(--mkz-primary);
+  border-radius: var(--mkz-radius);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: border 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+.mkz-shop-card:hover {
+  background: var(--mkz-primary);
+  color: #fff;
+}
+.mkz-services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+/* Product/service cards */
+.mkz-product-card, .mkz-service-card {
+  background: #fff;
+  border: 1.5px solid var(--mkz-border);
+  border-radius: var(--mkz-radius);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--mkz-text);
+  text-align: center;
+  min-width: 180px;
+  max-width: 300px;
+  transition: border 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+.mkz-service-card:hover {
+  border: 1.5px solid var(--mkz-primary);
+  color: var(--mkz-primary);
+  box-shadow: 0 2px 8px 0 #e5e7eb;
+}
+.mkz-about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mkz-about-text {
+  flex: 1 1 50%;
+  min-width: 220px;
+}
+.mkz-about-img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--mkz-radius);
+  border: 1.5px solid var(--mkz-border);
+  background: #fff;
+  flex: 1 1 40%;
+  min-width: 160px;
+}
+.mkz-about-content ul {
+  margin: 1rem 0 0 1.2rem;
+  padding: 0;
+  color: var(--mkz-primary);
+  font-weight: 500;
+}
+.mkz-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+}
+.mkz-contact-form input,
+.mkz-contact-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--mkz-border);
+  background: #fff;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  transition: border 0.2s;
+}
+.mkz-contact-form input:focus,
+.mkz-contact-form textarea:focus {
+  border: 1.5px solid var(--mkz-primary);
+}
+.mkz-contact-form button {
+  background: var(--mkz-primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mkz-contact-form button:hover {
+  background: #1d4ed8;
+  color: #fff;
+}
+.mkz-contact-info {
+  text-align: center;
+  margin-top: 1rem;
+  color: #444;
+}
+.mkz-contact-info a {
+  color: var(--mkz-primary);
+  text-decoration: underline;
+}
+.mkz-socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+/* Social icons */
+.mkz-socials a svg {
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--mkz-primary);
+}
+.mkz-account-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.mkz-tab-btn {
+  background: #fff;
+  color: var(--mkz-primary);
+  border: 1.5px solid var(--mkz-primary);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mkz-tab-btn.active, .mkz-tab-btn:hover {
+  background: var(--mkz-primary);
+  color: #fff;
+}
+.mkz-tab-content {
+  display: none;
+}
+.mkz-tab-content.active {
+  display: block;
+}
+.mkz-login-form, .mkz-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.mkz-login-form label {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+.mkz-lost-password {
+  display: block;
+  margin-top: 0.7rem;
+  color: var(--mkz-primary);
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+.mkz-cart {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--mkz-text);
+}
+.mkz-footer {
+  padding: 2rem 0 1.5rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--mkz-nav-bg);
+  border-top: none;
+  margin-top: 2rem;
+}
+#mkz-frame {
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 #e5e7eb;
+  background: #fff;
+  max-width: 1100px;
+  width: 100%;
+  min-height: 80vh;
+}
+@media (max-width: 900px) {
+  .mkz-about-content {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .mkz-about-img {
+    width: 100%;
+    max-width: 260px;
+    height: 140px;
+  }
+  .mkz-shop-categories, .mkz-services-list {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .mkz-shop-card, .mkz-service-card {
+    width: 100%;
+    max-width: 320px;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .mkz-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .mkz-hero-content {
+    padding: 1.2rem 0.5rem;
+  }
+  .mkz-section {
+    padding: 1rem 0.2rem 0.5rem 0.2rem;
+    margin: 1rem auto 0 auto;
+  }
+  .mkz-shop-card, .mkz-service-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: 0.8rem;
+  }
+  .mkz-contact-form {
+    max-width: 100%;
+    padding: 0 0.2rem;
+  }
+  .mkz-socials {
+    margin-top: 0.7rem;
+  }
+} 

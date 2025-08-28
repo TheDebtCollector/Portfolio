@@ -1,0 +1,63 @@
+/* mirkoz-about.css */
+.mkz-about-content {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 1;
+  transform: translateY(0);
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 #e5e7eb;
+  border: 2px solid #d90429;
+  padding: 2.5rem 2rem;
+  margin-top: 2.5rem;
+}
+.mkz-about-text {
+  flex: 1 1 50%;
+  min-width: 220px;
+  color: #181818;
+}
+.mkz-about-img {
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 2px solid #d90429;
+  background: #fff0f3;
+  flex: 1 1 40%;
+  min-width: 160px;
+  box-shadow: 0 2px 12px 0 #e5e7eb;
+}
+.mkz-about-content ul {
+  margin: 1.2rem 0 0 1.2rem;
+  padding: 0;
+  color: #d90429;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .mkz-about-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 0.7rem;
+  }
+  .mkz-about-img {
+    width: 100%;
+    max-width: 260px;
+    height: 140px;
+  }
+}
+@media (max-width: 600px) {
+  .mkz-about-content {
+    padding: 1.2rem 0.5rem;
+  }
+  .mkz-about-img {
+    width: 100%;
+    max-width: 220px;
+    height: 120px;
+  }
+  .mkz-about-text {
+    font-size: 0.97rem;
+  }
+} 

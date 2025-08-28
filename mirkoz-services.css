@@ -1,0 +1,38 @@
+/* mirkoz-services.css */
+.mkz-services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.mkz-service-card {
+  background: #fff;
+  border: 2px solid #d90429;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px 0 #e5e7eb;
+  padding: 2rem 2.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #181818;
+  text-align: center;
+  min-width: 200px;
+  max-width: 340px;
+  transition: border 0.2s, color 0.2s, box-shadow 0.2s, background 0.2s;
+  margin-bottom: 0.5rem;
+}
+.mkz-service-card:hover {
+  border: 2px solid #b3001b;
+  color: #d90429;
+  background: #fff0f3;
+  box-shadow: 0 8px 24px 0 #dbeafe;
+}
+@media (max-width: 600px) {
+  .mkz-service-card {
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
+  .mkz-services-list {
+    gap: 1rem;
+  }
+} 

@@ -1,0 +1,61 @@
+/* mirkoz-account.css */
+.mkz-account {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 #e5e7eb;
+  border: 2px solid #d90429;
+  color: #181818;
+}
+.mkz-login-form, .mkz-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 320px;
+  margin: 0 auto 1.5rem auto;
+}
+.mkz-login-form label {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+.mkz-login-form input, .mkz-register-form input {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #d90429;
+  background: #fff0f3;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.mkz-login-form input:focus, .mkz-register-form input:focus {
+  border: 1.5px solid #b3001b;
+}
+.mkz-login-form button, .mkz-register-form button {
+  background: #d90429;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mkz-login-form button:hover, .mkz-register-form button:hover {
+  background: #b3001b;
+}
+.mkz-lost-password {
+  display: block;
+  margin-top: 0.7rem;
+  color: #d90429;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+@media (max-width: 600px) {
+  .mkz-account {
+    padding: 1.2rem 0.5rem;
+  }
+  .mkz-login-form button, .mkz-register-form button {
+    width: 100%;
+  }
+} 

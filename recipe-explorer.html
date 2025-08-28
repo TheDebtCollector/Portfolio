@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Explorer – AI-Powered Cooking Assistant</title>
+  <meta name="description" content="AI-powered recipe app: search, discover, and cook with smart suggestions, step-by-step mode, and a shopping list.">
+  <meta property="og:title" content="Recipe Explorer – AI-Powered Cooking Assistant">
+  <meta property="og:description" content="AI-powered recipe app: search, discover, and cook with smart suggestions, step-by-step mode, and a shopping list.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="recipe-explorer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="container app-header-container">
+      <div class="app-title">
+        <i class="fas fa-utensils"></i>
+        <span>Recipe Explorer</span>
+      </div>
+      <div class="app-links">
+        <a href="recipe-explorer.html" class="app-link" target="_blank" title="Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+        <a href="#" class="app-link" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+        <button class="mode-toggle" id="modeToggle" aria-label="Toggle light/dark mode"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+  <aside class="shopping-list-sidebar" id="shoppingListSidebar">
+    <div class="sidebar-header">
+      <h3><i class="fas fa-shopping-basket"></i> Shopping List</h3>
+      <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="shopping-list" id="shoppingList"></ul>
+    <button class="clear-list" id="clearListBtn"><i class="fas fa-trash"></i> Clear List</button>
+  </aside>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1><i class="fas fa-utensils"></i> Recipe Explorer</h1>
+        <p>Discover, cook, and enjoy recipes with AI-powered suggestions and a smart shopping list.</p>
+        <form class="search-form" id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search recipes or enter ingredients (e.g. chicken, rice)..." autocomplete="off">
+          <button type="submit" class="btn-search"><i class="fas fa-search"></i> Search</button>
+        </form>
+        <button class="btn-ai" id="aiSuggestBtn"><i class="fas fa-magic"></i> AI Suggestion</button>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Delicious food" />
+      </div>
+    </div>
+    <div class="tech-used-row">
+      <div class="container">
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">CSS</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">LocalStorage</span>
+        <span class="tech-badge">Demo Data</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="recipes-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Recipes</h2>
+          <div class="filters">
+            <select id="dietFilter">
+              <option value="">All Diets</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="gluten free">Gluten Free</option>
+              <option value="keto">Keto</option>
+            </select>
+            <select id="cuisineFilter">
+              <option value="">All Cuisines</option>
+              <option value="italian">Italian</option>
+              <option value="mexican">Mexican</option>
+              <option value="asian">Asian</option>
+              <option value="american">American</option>
+            </select>
+          </div>
+        </div>
+        <div class="recipes-grid" id="recipesGrid">
+          <!-- Recipe cards will be loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="modal" id="recipeModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+      <div id="modalRecipeContent">
+        <!-- Recipe details will be loaded here -->
+      </div>
+    </div>
+  </div>
+  <div class="step-modal" id="stepModal">
+    <div class="step-modal-content">
+      <button class="close-step-modal" id="closeStepModalBtn"><i class="fas fa-times"></i></button>
+      <div id="stepContent">
+        <!-- Step-by-step mode will be loaded here -->
+      </div>
+    </div>
+  </div>
+  <button class="open-sidebar-btn" id="openSidebarBtn" title="Open Shopping List"><i class="fas fa-shopping-basket"></i></button>
+  <div id="toast-container"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span>&copy; 2024 Recipe Explorer. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="recipe-explorer.js"></script>
+</body>
+</html> 

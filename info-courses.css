@@ -1,0 +1,391 @@
+/* InfoCourses - Modern, Neon Glassmorphism Theme */
+:root {
+  --ic-bg: #f6f8fa;
+  --ic-bg-glass: rgba(255,255,255,0.7);
+  --ic-primary: #0ff1ce;
+  --ic-accent: #ff00c8;
+  --ic-dark: #181c24;
+  --ic-text: #232946;
+  --ic-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --ic-radius: 1.5rem;
+  --ic-nav-bg: rgba(255,255,255,0.6);
+  --ic-nav-blur: blur(8px);
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: var(--ic-bg);
+  color: var(--ic-text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+.ic-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--ic-nav-bg);
+  backdrop-filter: var(--ic-nav-blur);
+  box-shadow: var(--ic-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 0 0 var(--ic-radius) var(--ic-radius);
+}
+.ic-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ic-accent);
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--ic-primary);
+}
+.ic-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.ic-nav-links a {
+  text-decoration: none;
+  color: var(--ic-text);
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+.ic-nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--ic-primary), var(--ic-accent));
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+.ic-nav-links a:hover {
+  color: var(--ic-accent);
+}
+.ic-nav-links a:hover::after {
+  width: 100%;
+}
+#ic-dark-toggle {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: linear-gradient(135deg, var(--ic-primary), var(--ic-accent));
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--ic-accent);
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+#ic-dark-toggle:active {
+  filter: brightness(0.8);
+}
+.ic-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: linear-gradient(120deg, var(--ic-primary) 0%, var(--ic-bg) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+.ic-hero-content {
+  background: var(--ic-bg-glass);
+  box-shadow: var(--ic-shadow);
+  border-radius: var(--ic-radius);
+  padding: 3rem 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  backdrop-filter: blur(6px);
+}
+.ic-hero h1 {
+  font-size: 2.8rem;
+  color: var(--ic-accent);
+  text-shadow: 0 0 12px var(--ic-primary);
+  margin-bottom: 1rem;
+}
+.ic-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.ic-cta {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--ic-primary), var(--ic-accent));
+  color: #fff;
+  padding: 0.9rem 2.2rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 16px var(--ic-accent);
+  transition: background 0.2s, transform 0.2s;
+}
+.ic-cta:hover {
+  background: linear-gradient(90deg, var(--ic-accent), var(--ic-primary));
+  transform: scale(1.05);
+}
+.ic-info-section, .ic-courses-section, .ic-about-section, .ic-contact-section {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--ic-bg-glass);
+  box-shadow: var(--ic-shadow);
+  border-radius: calc(var(--ic-radius) + 0.5rem);
+  margin: 2.5rem auto 0 auto;
+  max-width: 1100px;
+  position: relative;
+}
+.ic-info-section::before, .ic-courses-section::before, .ic-about-section::before, .ic-contact-section::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 40px;
+  right: 40px;
+  height: 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--ic-primary) 0%, var(--ic-accent) 100%);
+  opacity: 0.08;
+  z-index: 0;
+}
+.ic-info-section h2 {
+  color: var(--ic-primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 0 8px var(--ic-accent);
+}
+.ic-articles, .ic-courses-catalog {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ic-article-card, .ic-course-card {
+  background: var(--ic-bg-glass);
+  box-shadow: var(--ic-shadow);
+  border-radius: var(--ic-radius);
+  width: 320px;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: 1.5px solid var(--ic-primary);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ic-article-card:hover, .ic-course-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 32px var(--ic-accent);
+}
+.ic-article-card h3, .ic-course-info h3 {
+  color: var(--ic-accent);
+  margin-bottom: 0.7rem;
+  text-align: center;
+  width: 100%;
+}
+.ic-readmore {
+  margin-top: auto;
+  color: var(--ic-primary);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.ic-readmore:hover {
+  color: var(--ic-accent);
+}
+.ic-course-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--ic-radius) var(--ic-radius) 0 0;
+}
+.ic-course-info {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ic-course-price {
+  color: var(--ic-accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.7rem 0;
+}
+.ic-enroll-btn {
+  background: linear-gradient(90deg, var(--ic-primary), var(--ic-accent));
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--ic-accent);
+  transition: background 0.2s, transform 0.2s;
+  align-self: center;
+  margin-top: 1rem;
+}
+.ic-enroll-btn:hover {
+  background: linear-gradient(90deg, var(--ic-accent), var(--ic-primary));
+  transform: scale(1.05);
+}
+.ic-about-section h2 {
+  color: var(--ic-accent);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 8px var(--ic-primary);
+}
+.ic-about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ic-about-text {
+  flex: 1 1 50%;
+  min-width: 260px;
+}
+.ic-about-img {
+  width: 340px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--ic-radius);
+  box-shadow: 0 0 16px var(--ic-primary);
+  flex: 1 1 40%;
+  min-width: 220px;
+}
+.ic-contact-section {
+  max-width: 600px;
+}
+.ic-contact-section h2 {
+  color: var(--ic-primary);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 8px var(--ic-accent);
+}
+.ic-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 2rem auto;
+}
+.ic-contact-form input,
+.ic-contact-form textarea {
+  padding: 0.9rem 1.2rem;
+  border-radius: 1rem;
+  border: 1.5px solid var(--ic-primary);
+  background: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  transition: border 0.2s;
+}
+.ic-contact-form input:focus,
+.ic-contact-form textarea:focus {
+  border: 1.5px solid var(--ic-accent);
+}
+.ic-contact-form button {
+  background: linear-gradient(90deg, var(--ic-primary), var(--ic-accent));
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--ic-accent);
+  transition: background 0.2s, transform 0.2s;
+}
+.ic-contact-form button:hover {
+  background: linear-gradient(90deg, var(--ic-accent), var(--ic-primary));
+  transform: scale(1.05);
+}
+.ic-socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.ic-socials a svg {
+  filter: drop-shadow(0 0 6px var(--ic-primary));
+  border-radius: 50%;
+  background: #fff;
+}
+.ic-footer {
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  color: var(--ic-accent);
+  font-size: 1rem;
+  background: transparent;
+}
+@media (max-width: 900px) {
+  .ic-about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .ic-about-img {
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+  }
+  .ic-articles, .ic-courses-catalog {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .ic-article-card, .ic-course-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .ic-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .ic-hero-content {
+    padding: 2rem 1rem;
+  }
+  .ic-info-section, .ic-courses-section, .ic-about-section, .ic-contact-section {
+    padding: 1.2rem 0.2rem 0.7rem 0.2rem;
+    margin: 1.2rem auto 0 auto;
+  }
+  .ic-article-card, .ic-course-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: 1.2rem;
+  }
+  .ic-contact-form {
+    max-width: 100%;
+    padding: 0 0.2rem;
+  }
+  .ic-socials {
+    margin-top: 1.2rem;
+  }
+}
+/* Dark mode */
+body.ic-dark {
+  --ic-bg: #181c24;
+  --ic-bg-glass: rgba(24,28,36,0.85);
+  --ic-text: #f6f8fa;
+  --ic-nav-bg: rgba(24,28,36,0.7);
+}
+body.ic-dark .ic-logo {
+  color: var(--ic-primary);
+  text-shadow: 0 0 8px var(--ic-accent);
+}
+body.ic-dark .ic-footer {
+  color: var(--ic-primary);
+} 

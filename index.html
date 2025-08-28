@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noah - Computer Science Student & Freelance Developer</title>
+  <meta name="description" content="Noah's portfolio: Computer Science & Business Analysis student, crypto investor, and freelance developer. Projects, crypto strategy, and contact info.">
+  <meta property="og:title" content="Noah - Computer Science Student & Freelance Developer">
+  <meta property="og:description" content="Noah's portfolio: Computer Science & Business Analysis student, crypto investor, and freelance developer. Projects, crypto strategy, and contact info.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:image" content="/logo.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,6 +38,9 @@
         <span></span>
         <span></span>
         <span></span>
+      </button>
+      <button class="mode-toggle" id="modeToggle" aria-label="Toggle light/dark mode">
+        <i class="fas fa-moon"></i>
       </button>
     </div>
   </nav>
@@ -104,27 +114,18 @@
     <div class="container">
       <div class="section-header">
         <span class="section-badge">About Me</span>
-        <h2>Turning Ideas Into Digital Reality</h2>
-        <p>Passionate about creating solutions that make a difference</p>
+        <h2>CS & Business Analysis Student | Developer</h2>
+        <p>Building digital solutions and learning every day</p>
       </div>
       <div class="about-content">
         <div class="about-text">
-          <p>Hi, I'm Noah — a Computer Science student and business analyst passionate about building digital solutions that work. I specialize in creating simple, functional, and fast web apps, MVPs, and automation tools.</p>
-          <p>I've worked on crypto dashboards, landing pages, and startup tools. I love turning ideas into real, working products that help businesses grow and succeed.</p>
-          <div class="about-features">
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Fast & Responsive Design</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Clean & Maintainable Code</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>SEO Optimized</span>
-            </div>
-          </div>
+          <p>Hi, I'm Noah — a Computer Science student and business analyst passionate about building digital solutions and helping businesses grow. My focus is on long-term learning, software development, and creating value for users and clients.</p>
+          <ul class="about-list">
+            <li><strong>Who:</strong> Student in Computer Science & Business Analysis</li>
+            <li><strong>Focus:</strong> Web development, automation, and business analysis</li>
+            <li><strong>Goal:</strong> Build great products and grow as a developer</li>
+          </ul>
+          <a href="https://docs.google.com/document/d/your-resume-link" target="_blank" class="btn btn-secondary resume-btn"><i class="fas fa-file-download"></i> Download CV</a>
         </div>
         <div class="about-image">
           <div class="image-container">
@@ -325,46 +326,10 @@
         <span class="section-badge">Portfolio</span>
         <h2>Featured Projects</h2>
         <p>Recent work that showcases my skills</p>
+        <a href="https://docs.google.com/document/d/your-resume-link" target="_blank" class="btn btn-secondary resume-btn"><i class="fas fa-file-download"></i> Download CV</a>
       </div>
       <div class="projects-grid">
         <div class="project-card" data-aos="fade-up">
-          <div class="project-image">
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="crypto-dashboard.html" class="project-link" target="_blank">
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="#" class="project-link">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <div class="project-placeholder">
-              <i class="fas fa-chart-pie"></i>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Crypto Portfolio Tracker</h3>
-            <p>Built a comprehensive dashboard to monitor real-time crypto prices, token balances, and profit/loss using APIs and Chart.js. Features portfolio management, real-time data, and interactive charts.</p>
-            <div class="project-tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">Chart.js</span>
-              <span class="tag">APIs</span>
-              <span class="tag">Data Visualization</span>
-            </div>
-            <div class="project-stats">
-              <div class="stat">
-                <span class="stat-number">95%</span>
-                <span class="stat-label">Accuracy</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">Uptime</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-image">
             <div class="project-overlay">
               <div class="project-links">
@@ -401,7 +366,7 @@
             </div>
           </div>
         </div>
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-image">
             <div class="project-overlay">
               <div class="project-links">
@@ -438,7 +403,7 @@
             </div>
           </div>
         </div>
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="project-image">
             <div class="project-overlay">
               <div class="project-links">
@@ -475,7 +440,7 @@
             </div>
           </div>
         </div>
-        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
           <div class="project-image">
             <div class="project-overlay">
               <div class="project-links">
@@ -508,6 +473,152 @@
               <div class="stat">
                 <span class="stat-number">AI-Powered</span>
                 <span class="stat-label">Generation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="computer-store.html" class="project-link" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-placeholder">
+              <i class="fas fa-desktop"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Computer Store Website</h3>
+            <p>Developed a modern, responsive e-commerce website for a computer store. Features product catalog, filtering, shopping cart, checkout, and customer reviews. Built for performance and conversion.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">E-commerce</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Products</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">4.9★</span>
+                <span class="stat-label">Avg. Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="recipe-explorer.html" class="project-link" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-placeholder">
+              <i class="fas fa-utensils"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Recipe Explorer <span class="badge">AI</span></h3>
+            <p>An AI-powered cooking assistant: search, discover, and cook recipes with smart suggestions, step-by-step mode, and a shopping list. Beautiful, responsive, and fun!</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">LocalStorage</span>
+              <span class="tag">Demo Data</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Demo Recipes</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">AI</span>
+                <span class="stat-label">Suggestion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="mirkoz.html" class="project-link" target="_blank">MKZ Vending (Vending Machines)</a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-placeholder">
+              <i class="fas fa-utensils"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>MKZ Vending (Vending Machines)</h3>
+            <p>A comprehensive website for MKZ Vending, showcasing their product range, services, and contact information. Features a clean, modern design and easy navigation.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">Vending Machines</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">1</span>
+                <span class="stat-label">Website</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Vending</span>
+                <span class="stat-label">Products</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="700">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="info-courses.html" class="project-link" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-placeholder">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>InfoCourses – Knowledge & Courses Hub</h3>
+            <p>A modern, visually distinct platform for sharing informational articles and selling courses. Features a blog section, course catalog with enroll options, contact form, and a unique neon/glassmorphism design. Built for creators and educators to reach their audience and monetize knowledge.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">Glassmorphism</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Courses</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Blog</span>
+                <span class="stat-label">Section</span>
               </div>
             </div>
           </div>
@@ -717,5 +828,6 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html> 

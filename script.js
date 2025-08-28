@@ -112,6 +112,32 @@ const skillBars = document.querySelectorAll('.skill-progress');
 const statNumbers = document.querySelectorAll('.stat-number');
 const contactForm = document.getElementById('contactForm');
 
+// --- DARK MODE TOGGLE ---
+const modeToggle = document.getElementById('modeToggle');
+const modeIcon = modeToggle ? modeToggle.querySelector('i') : null;
+function setDarkMode(enabled) {
+  if (enabled) {
+    document.body.classList.add('dark-mode');
+    if (modeIcon) { modeIcon.classList.remove('fa-moon'); modeIcon.classList.add('fa-sun'); }
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.body.classList.remove('dark-mode');
+    if (modeIcon) { modeIcon.classList.remove('fa-sun'); modeIcon.classList.add('fa-moon'); }
+    localStorage.setItem('theme', 'light');
+  }
+}
+if (modeToggle) {
+  modeToggle.addEventListener('click', () => {
+    setDarkMode(!document.body.classList.contains('dark-mode'));
+  });
+}
+// Load mode from localStorage
+(function() {
+  const theme = localStorage.getItem('theme');
+  if (theme === 'dark') setDarkMode(true);
+  else setDarkMode(false);
+})();
+
 // Navigation Toggle
 navToggle.addEventListener('click', () => {
   nav.classList.toggle('nav-open');
@@ -543,3 +569,29 @@ console.log(`
 'color: #6b7280; font-size: 12px;',
 'color: #2563eb; font-size: 14px; font-weight: bold;'
 ); 
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        // Active nav-link
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+
+  // Contact form demo
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Bedankt voor je bericht! We nemen zo snel mogelijk contact op.');
+      form.reset();
+    });
+  }
+}); 

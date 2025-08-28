@@ -1,0 +1,76 @@
+/* mirkoz-contact.css */
+.mkz-contact {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 #e5e7eb;
+  border: 2px solid #d90429;
+  color: #181818;
+}
+.mkz-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+}
+.mkz-contact-form input,
+.mkz-contact-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #d90429;
+  background: #fff0f3;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  transition: border 0.2s;
+}
+.mkz-contact-form input:focus,
+.mkz-contact-form textarea:focus {
+  border: 1.5px solid #b3001b;
+}
+.mkz-contact-form button {
+  background: #d90429;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mkz-contact-form button:hover {
+  background: #b3001b;
+}
+.mkz-contact-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #444;
+}
+.mkz-contact-info a {
+  color: #d90429;
+  text-decoration: underline;
+}
+.mkz-socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.mkz-socials a svg {
+  border-radius: 50%;
+  background: #fff;
+}
+@media (max-width: 600px) {
+  .mkz-contact {
+    padding: 1.2rem 0.5rem;
+  }
+  .mkz-contact-form button {
+    width: 100%;
+  }
+  .mkz-contact-info {
+    font-size: 0.97rem;
+  }
+} 

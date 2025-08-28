@@ -1,0 +1,99 @@
+/* mirkoz-shop.css */
+.mkz-shop-categories {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.mkz-shop-card {
+  background: #fff;
+  color: #d90429;
+  border: 2px solid #d90429;
+  border-radius: 0.7rem;
+  padding: 1.2rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: border 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+.mkz-shop-card:hover {
+  background: #d90429;
+  color: #fff;
+  border: 1.5px solid var(--mkz-primary);
+  color: var(--mkz-primary);
+  box-shadow: 0 4px 16px 0 #dbeafe;
+}
+.mkz-shop-card.active {
+  background: #d90429;
+  color: #fff;
+  border: 2px solid #d90429;
+}
+#mkz-products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.2rem;
+  margin-bottom: 2rem;
+}
+.mkz-product-card {
+  background: #fff;
+  border: 2px solid #d90429;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px 0 #e5e7eb;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, border 0.2s;
+  color: #181818;
+}
+.mkz-product-card:hover {
+  border: 2px solid #b3001b;
+  box-shadow: 0 8px 24px 0 #dbeafe;
+}
+.mkz-product-img {
+  width: 100%;
+  max-width: 220px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  background: #f5f7fa;
+}
+.mkz-product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d90429;
+  margin-bottom: 0.5rem;
+}
+.mkz-product-desc {
+  font-size: 0.97rem;
+  color: #444;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.mkz-product-meta {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #d90429;
+}
+@media (max-width: 600px) {
+  .mkz-shop-card {
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
+  #mkz-products-list {
+    gap: 1.2rem;
+  }
+  .mkz-product-card {
+    padding: 1rem 0.5rem 0.7rem 0.5rem;
+  }
+  .mkz-product-card {
+    width: 100%;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+} 
